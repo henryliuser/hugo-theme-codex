@@ -16,6 +16,12 @@
     var xtSplash = 50;
     var xt = 50;
     var yt = 50;
+
+    $(document).ready(function() {
+      $("#bg").animate({left:"-3%"},10000);
+      $("#bg").animate({left:"20%"},10000);
+    });
+
     setInterval(function(){
       $("#bg").animate({left:"-3%"},10000);
       $("#bg").animate({left:"20%"},10000); //test.stop
