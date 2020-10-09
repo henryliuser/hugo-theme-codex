@@ -69,11 +69,11 @@
   font-size: 2em;
 
   &.active {
-    color: $black;
+    color: white;
   }
 
   &:hover {
-    color: $black;
+    color: white;
   }
 
   @media screen and (min-width: $medium) {

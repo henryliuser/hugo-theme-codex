@@ -2,22 +2,79 @@
     {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/about.scss" "dest" "css/about.css") }}
 {{ end }}
 
+
 {{ define "main" }}
 
-<div class="splash-container">
-  <div class="splash">
-    
-    <h1>{{ .Params.heading }}<span class="fancy">.</span></h1>
-    {{ if isset .Params "handle" }}
-    <span class="handle">@{{ .Params.handle }}</span>
-    {{ end }}
-    <h2>
-      {{ .Params.subheading }}
-    </h2>
-    <!-- Replace MEEEEE -->
+<head>
+  <script type = "text/javascript" src = "/assets/jquery-3.5.1.min.js">
+  </script>
 
-    {{ partial "social-icons.html" .}}
-  </div>
-</div>
+  <script type = "text/javascript">
+    var xp = 50;
+    var yp = 50;
+    var xpSplash = 50;
+    var xtSplash = 50;
+    var xt = 50;
+    var yt = 50;
+    setInterval(function(){
+      $("#bg").animate({left:"-3%"},10000);
+      $("#bg").animate({left:"20%"},10000); //test.stop
+    }, 20000);
+    setInterval(function(){
+      var diffSplash = Math.abs(xtSplash-xpSplash);
+      // document.write(diffSplash);
+      if (diffSplash <= 0.15) {xtSplash = xpSplash;}
+      else {
+        xpSplash = Number( (xpSplash+(xtSplash-xpSplash)*0.03).toFixed(3) );
+      }
+      xp = Number( (xp+(xt-xp)*0.08).toFixed(3) );
+      yp = Number( (yp+(yt-yp)*0.08).toFixed(3) );
+      // document.write(xp);
+      // 50.079499999999996
+      var temp1 = xp.toString()+"%";
+      var temp2 = yp.toString()+"%";
+      var temp3 = xpSplash.toString()+"%"
+      // alert("xp: " + temp1 + "\nyp: " + temp2);
+      $("#circle").css({left:temp1, top:temp2});
+      $("#splash").css({left:temp3});
+
+    },10);
+
+
+    $(document).mousemove(function(e){
+      var a = 1;
+      // document.write($("#circle").css("left"));
+      // var x = (e.pageX/1000+48.5).toString() + "%";
+      // var y = (e.pageY/1000+48.5).toString() + "%";
+      xt = (e.pageX/900+49);
+      yt = (e.pageY/900+49);
+      xtSplash = (e.pageX/1500+50);
+
+        // $("#circle").css({left:x, top:y});
+    });
+  </script>
+</head>
+
+<body style="background-color:#1e1d1a; overflow-y:hidden; overflow-x:hidden">
+  <img id="bg" style="position:absolute;width:90%;height:90%;top:6%;padding: 10px;opacity:0.5" src="https://images.unsplash.com/photo-1538592487700-be96de73306f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80">
+  <img id="circle" style="position:absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);padding: 10px;" src="/assets/bgtest.png">
+    <div id="splash" style="position:absolute;left: 50%;top: 47%;transform: translate(-50%, -50%);padding: 10px;" class="splash-container">
+      <div class="splash">
+
+        <h1 style="color:white">{{ .Params.heading }}<span class="fancy">.</span></h1>
+        {{ if isset .Params "handle" }}
+        <span style="color:#d3d3d3" class="handle">@{{ .Params.handle }}</span>
+        {{ end }}
+        <h2 style="color:white">
+          {{ .Params.subheading }}
+        </h2>
+        <!-- Replace MEEEEE -->
+
+        {{ partial "social-icons.html" .}}
+      </div>
+    </div>
+
+</body>
+
 
 {{ end }}

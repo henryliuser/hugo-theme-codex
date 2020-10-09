@@ -3,25 +3,29 @@
 {{ end }}
 
 {{ define "main" }}
-    
-{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}    
 
-<div class="post-list__container">
-  <ul class="post-list">
-    {{ range .Pages }}
-    <li class="post">
-      <div class="post__header">
-        <time class="post__date" datetime="{{ .Date }}"
-          >{{ .Date.Format $dateFormat }}</time>
-        <h2 class="post__title">
-          <a href="{{.RelPermalink}}">{{ .Title }}</a>
-        </h2>
-        {{ partial "tags.html" .}}
-      </div>
-    </li>
-    {{ end }}
-  </ul>
-  {{ partial "browse-by-tag.html" .}}
-</div>
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
+<body style="background-color:#1e1d1a;">
+
+  <div class="post-list__container">
+    <ul class="post-list">
+      {{ range .Pages }}
+      <li class="post">
+        <div class="post__header">
+          <time class="post__date" datetime="{{ .Date }}"
+            >{{ .Date.Format $dateFormat }}</time>
+          <h2 class="post__title">
+            <a href="{{.RelPermalink}}">{{ .Title }}</a>
+          </h2>
+          {{ partial "tags.html" .}}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "browse-by-tag.html" .}}
+  </div>
+</body>
+
+</body>
 
 {{ end }}
