@@ -5,25 +5,70 @@
 {{ define "main" }}
 
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
+
 <body style="background-color:#1e1d1a;">
 
   <div class="post-list__container">
     <ul class="post-list">
-      {{ range .Pages }}
-      <li class="post">
-        <div class="post__header">
-          <time class="post__date" datetime="{{ .Date }}"
-            >{{ .Date.Format $dateFormat }}</time>
-          <h2 class="post__title">
-            <a href="{{.RelPermalink}}">{{ .Title }}</a>
-          </h2>
-          {{ partial "tags.html" .}}
-        </div>
-      </li>
-      {{ end }}
+
+      <div class = "column">
+        <li class="post">
+          <div class="post__header">
+            <h2 class="post__title">
+              <a href="/games/test">Jumpers</a>
+            </h2>
+            <p></p>
+            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
+          </div>
+        </li>
+      </div>
+      <div class = "column">
+        <li class="post">
+          <div class="post__header">
+            <h2 class="post__title">
+              <a href="/games/Jumpers">Ain't That Sweet!</a>
+            </h2>
+            <p></p>
+            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
+          </div>
+        </li>
+      </div>
+
     </ul>
-    {{ partial "browse-by-tag.html" .}}
+
   </div>
+
+  <div class="post-list__container">
+    <ul class="post-list">
+
+      <div class = "column">
+        <li class="post">
+          <div class="post__header">
+            <h2 class="post__title">
+              <a href="/games/test">squarEscape</a>
+            </h2>
+            <p></p>
+            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
+          </div>
+        </li>
+      </div>
+      <div class = "column">
+        <li class="post">
+          <div class="post__header">
+            <h2 class="post__title">
+              <a href="/games/test">Karen-tastrophe</a>
+            </h2>
+            <p></p>
+            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
+          </div>
+        </li>
+      </div>
+
+    </ul>
+
+  </div>
+
+
 </body>
 
 </body>
