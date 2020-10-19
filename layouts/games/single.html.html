@@ -1,5 +1,5 @@
 {{ define "styles" }}
-    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/post.scss" "dest" "css/post.css") }}
+    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/post2.scss" "dest" "css/post2.css") }}
 {{ end }}
 
 
@@ -7,11 +7,6 @@
 {{ define "main" }}
     {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
 
-    <!-- <style>
-      .main {
-        background-color:#1e1d1a;
-      }
-    </style> -->
 
     <body style="background-color:#1e1d1a;overflow:hidden">
     <div class="flex-wrapper">
