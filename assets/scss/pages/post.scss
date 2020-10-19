@@ -230,10 +230,18 @@ footer {
   a:link {
     color: #f4bbff;
     background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
   }
   a:visited {
     color: orange;
+    font-weight: bold;
     background-color: transparent;
+  }
+  a:hover {
+    color: #FFFE26;
+    font-weight: bold;
+    text-decoration: none;
   }
 }
 
