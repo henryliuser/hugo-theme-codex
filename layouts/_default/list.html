@@ -6,71 +6,66 @@
 
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
 
-<body style="background-color:#1e1d1a;">
+<style>
+  .row {
+    display: flex;
 
-  <div class="post-list__container">
-    <ul class="post-list">
+  }
+  .column {
+    flex: 100%;
+    width: 400px
+  }
+  .video {
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img {
+    object-fit: cover
+  }
+</style>
 
-      <div class = "column">
-        <li class="post">
-          <div class="post__header">
-            <h2 class="post__title">
-              <a href="/games/test">Jumpers</a>
-            </h2>
-            <p></p>
-            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
-          </div>
-        </li>
+<body style="background-color:#1e1d1a;overflow-y:hidden; overflow-x:hidden">
+
+
+  <div class="row" style="margin:auto;padding-top:0px">
+    <div class = "column" style="padding-left:8%;padding-top:0px">
+      <div style="width:560px; height:350px; border-radius:30px; overflow:hidden" >
+        <a href="/games/jumpers"><img src="/assets/wip.jpeg" style="width:570px;height:350px">
       </div>
-      <div class = "column">
-        <li class="post">
-          <div class="post__header">
-            <h2 class="post__title">
-              <a href="/games/Jumpers">Ain't That Sweet!</a>
-            </h2>
-            <p></p>
-            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
-          </div>
-        </li>
+    </div>
+    <div class="column" style="padding-top:0px">
+      <div style="width:560px; height:350px; border-radius:30px; overflow:hidden" >
+        <a href="/games/jumpers"><video width="100%" height="100%" autoplay loop muted>
+          <source src="/assets/atsSplash.mp4" type="video/mp4">
+          your browser cannot load this video
+        </video>
       </div>
-
-    </ul>
-
+    </div>
   </div>
 
-  <div class="post-list__container">
-    <ul class="post-list">
+  <p></p>
 
-      <div class = "column">
-        <li class="post">
-          <div class="post__header">
-            <h2 class="post__title">
-              <a href="/games/test">squarEscape</a>
-            </h2>
-            <p></p>
-            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
-          </div>
-        </li>
+  <div class="row" style="margin:auto;padding-top:0px">
+    <div class = "column" style="margin:auto;padding-left:8%;padding-top:0px">
+      <div style="width:560px; height:350px; border-radius:30px; overflow:hidden;" >
+        <a href="/games/jumpers"><video width="110%" height="105%" autoplay loop muted>
+          <source src="/assets/karSplash.mov" type="video/mp4">
+          your browser cannot load this video
+        </video>
       </div>
-      <div class = "column">
-        <li class="post">
-          <div class="post__header">
-            <h2 class="post__title">
-              <a href="/games/test">Karen-tastrophe</a>
-            </h2>
-            <p></p>
-            <img src="/assets/potcan.gif" style="border-radius:10%" width="80%" height="80%">
-          </div>
-        </li>
+    </div>
+    <div class="column" style="padding-top:0px">
+      <a href="/games/jumpers"><div style="width:560px; height:350px; border-radius:30px; overflow:hidden" >
+        <img src="/assets/seSplash.png" style="width:570px;height:350px">
       </div>
-
-    </ul>
-
+    </div>
   </div>
-
 
 </body>
 
-</body>
 
 {{ end }}
