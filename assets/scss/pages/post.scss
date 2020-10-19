@@ -227,6 +227,14 @@ footer {
     padding-left: 50px;
     border-radius: 50%;
   }
+  a:link {
+    color: #f4bbff;
+    background-color: transparent;
+  }
+  a:visited {
+    color: pink;
+    background-color: transparent;
+  }
 }
 
 .twitter-tweet.twitter-tweet-rendered {
