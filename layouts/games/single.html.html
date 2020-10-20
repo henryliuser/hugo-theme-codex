@@ -13,7 +13,7 @@
       <div class="post__container" style="background-color:#1e1d1a">
         <div class="post">
           <header class="post__header">
-            <h1 style="color:white;margin:auto;" id="post__title">{{.Title}}</h1>
+            <h1 style="color:white; margin:auto;" id="post__title">{{.Title}}</h1>
             {{ if .Date }}<time datetime="{{ .Date }}" class="post__date">{{ .Date.Format $dateFormat }}</time> {{ end }}
           </header>
           <article class="post__content" style="color:white;background-color:#1e1d1a">
