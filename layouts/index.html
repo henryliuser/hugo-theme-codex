@@ -67,7 +67,7 @@
     <div id="splash" style="position:absolute;left: 50%;top: 49%;transform: translate(-50%, -50%);padding: 10px;" class="splash-container">
       <div class="splash">
 
-        <h1 style="color:white;font-size:4vw">{{ .Params.heading }}<span class="fancy">.</span></h1>
+        <h1 style="color:white;font-size:min(4vw,80px)">{{ .Params.heading }}<span class="fancy">.</span></h1>
         {{ if isset .Params "handle" }}
         <span style="color:#d3d3d3" class="handle">@{{ .Params.handle }}</span>
         {{ end }}
